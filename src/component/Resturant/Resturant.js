@@ -1,45 +1,29 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./resturant.css";
+import FoodItems from "./FoodItems";
 import Menu from "./menuAPI";
-import ResturantNavbar from "./ResturantNavbar";
 
 const Resturant = () => {
-    const [fetchApi, setFetchApi] = useState([])
-
-    useEffect(() => {
-        setFetchApi([...fetchApi, ...Menu])
-    }, [Menu])
-
-    return ( <div>
-        <ResturantNavbar />
-        <div className="card-container">
-            {
-                fetchApi.map((item, index) => {
-                    const {name, itemLeft, catagory, image, description} = item
-                    return <div className="card" key={index}>
-                    <div className="card-body">
-                        <div className="card-foods">
-                            <span>{name}</span>
-                            <span>Item left {itemLeft}</span>
-                        </div>
-
-                        <div className="food-container">
-                            <div className="card-image">
-                                <img src={image} alt="" />
-                            </div>
-                            <div className="card-descriptions">
-                                <p>{description}</p>
-                                <div className="order-now"><a href="#">Order Now</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                })
-            }
-        </div>
-        </div>
+    const [fetchApi, setFetchApi] = useState(Menu)
+  return ( 
+    <div>
         
-    )
+        <header>
+            <div className="logo">
+                <h3><a href="">Resturant</a></h3>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="">Breakfast</a></li>
+                    <li><a href="">Lunch</a></li>
+                    <li><a href="">Snacks</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <FoodItems fetch={fetchApi} setFetch={setFetchApi}/>
+    </div>
+  )
 }
 
 export default Resturant
