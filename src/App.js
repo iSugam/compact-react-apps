@@ -3,7 +3,7 @@ import Resturant from './component/Resturant/Resturant';
 
 function App(props) {
   return (
-    <div className="App">
+    <div className="container">
       <Resturant />
     </div>
   );

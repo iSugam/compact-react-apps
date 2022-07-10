@@ -5,7 +5,12 @@
     gap: 2rem;
     margin-top: 50px;
     justify-content: space-around;
+    grid-auto-flow: dense;
     padding: 0 2rem;
+}
+
+.card {
+    max-width: 350px;
 }
 
 .card-body {
@@ -14,11 +19,11 @@
     box-shadow: 0 5px 10px rgba(49, 30, 30, 0.5);
     border-radius: 10px;
     background-color: rgba(228, 228, 228, 0.15);
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(12px);
     transition: transform .3s ease;
 }
 .card-body:hover {
-    transform: scale(1.05);
+    transform: translateY(-5%);
 }
 
 .card-foods {
