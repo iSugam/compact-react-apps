@@ -5,7 +5,7 @@ const Menu = [
         itemLeft: 12,
         catagory: "breakfast",
         image: "../assets/images/breakfast/bread-omlet.jpg",
-        description,
+        description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error, enim doloribus? Porro qui saepe veniam!",
     },
     {
         id: 2,
@@ -13,7 +13,7 @@ const Menu = [
         itemLeft: 34,
         catagory: "breakfast",
         image: "../assets/images/breakfast/croissant.jpg",
-        description,
+        description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error, enim doloribus? Porro qui saepe veniam!",
     },
     {
         id: 3,
@@ -21,7 +21,7 @@ const Menu = [
         itemLeft: 15,
         catagory: "breakfast",
         image: "../assets/images/breakfast/fruits.jpg",
-        description,
+        description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error, enim doloribus? Porro qui saepe veniam!",
     },
     {
         id: 4,
@@ -29,7 +29,7 @@ const Menu = [
         itemLeft: 30,
         catagory: "breakfast",
         image: "../assets/images/breakfast/healthy-nuts.jpg",
-        description,
+        description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error, enim doloribus? Porro qui saepe veniam!",
     },
     {
         id: 5,
@@ -37,7 +37,7 @@ const Menu = [
         itemLeft: 23,
         catagory: "breakfast",
         image: "../assets/images/breakfast/pancakes.jpg",
-        description,
+        description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error, enim doloribus? Porro qui saepe veniam!",
     },
     {
         id: 6,
@@ -45,7 +45,7 @@ const Menu = [
         itemLeft: 5,
         catagory: "breakfast",
         image: "../assets/images/breakfast/poori.jpg",
-        description,
+        description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error, enim doloribus? Porro qui saepe veniam!",
     },
     {
         id: 7,
@@ -53,7 +53,7 @@ const Menu = [
         itemLeft: 8,
         catagory: "breakfast",
         image: "../assets/images/breakfast/upma.jpg",
-        description,
+        description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error, enim doloribus? Porro qui saepe veniam!",
     },
     {
         id: 8,
@@ -61,7 +61,7 @@ const Menu = [
         itemLeft: 14,
         catagory: "breakfast",
         image: "../assets/images/breakfast/sandwich.jpg",
-        description,
+        description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error, enim doloribus? Porro qui saepe veniam!",
     },
     {
         id: 9,
@@ -69,7 +69,7 @@ const Menu = [
         itemLeft: 25,
         catagory: "lunch",
         image: "../assets/images/lunch/aloo-paratha.jpg",
-        description,
+        description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error, enim doloribus? Porro qui saepe veniam!",
     },
     {
         id: 10,
@@ -77,15 +77,15 @@ const Menu = [
         itemLeft: 10,
         catagory: "lunch",
         image: "../assets/images/lunch/burger-box.jpg",
-        description,
+        description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error, enim doloribus? Porro qui saepe veniam!",
     },
     {
         id: 11,
         name: "Chicke Biriyani",
         itemLeft: 18,
         catagory: "lunch",
-        image: "../assets/images/lunch/chicken-biriyani.jpg",
-        description,
+        image: "../assets/images/lunch/chicken-biryani.jpg",
+        description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error, enim doloribus? Porro qui saepe veniam!",
     },
     {
         id: 12,
@@ -93,7 +93,7 @@ const Menu = [
         itemLeft: 8,
         catagory: "lunch",
         image: "../assets/images/lunch/healthy-sandwich.jpg",
-        description,
+        description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error, enim doloribus? Porro qui saepe veniam!",
     },
     {
         id: 13,
@@ -101,7 +101,7 @@ const Menu = [
         itemLeft: 7,
         catagory: "lunch",
         image: "../assets/images/lunch/rice-box.jpg",
-        description,
+        description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error, enim doloribus? Porro qui saepe veniam!",
     },
     {
         id: 14,
@@ -109,7 +109,7 @@ const Menu = [
         itemLeft: 3,
         catagory: "lunch",
         image: "../assets/images/lunch/veg-rolls.jpg",
-        description,
+        description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error, enim doloribus? Porro qui saepe veniam!",
     },
     {
         id: 15,
@@ -117,7 +117,7 @@ const Menu = [
         itemLeft: 2,
         catagory: "snacks",
         image: "../assets/images/snacks/momo.webp",
-        description,
+        description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error, enim doloribus? Porro qui saepe veniam!",
     },
 ]
 

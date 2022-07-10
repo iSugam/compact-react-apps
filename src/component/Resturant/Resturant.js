@@ -1,27 +1,45 @@
-import "./resturant.css"
-const Resturant = () => {
-  return (
-    <div className="card-container">
-        <div className="card">
-            <div className="card-body">
-                <div className="card-foods">
-                    <span>Momo</span>
-                    <span>Item left 3</span>
-                </div>
+import { useEffect, useState } from "react";
+import "./resturant.css";
+import Menu from "./menuAPI";
+import ResturantNavbar from "./ResturantNavbar";
 
-                <div className="food-container">
-                    <div className="card-image">
-                        <img src="../assets/images/snacks/momo.webp" alt="" />
-                    </div>
-                    <div className="card-descriptions">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error, enim doloribus? Porro qui saepe veniam!</p>
-                        <div className="order-now"><a href="#">Order Now</a></div>
+const Resturant = () => {
+    const [fetchApi, setFetchApi] = useState([])
+
+    useEffect(() => {
+        setFetchApi([...fetchApi, ...Menu])
+    }, [Menu])
+
+    return ( <div>
+        <ResturantNavbar />
+        <div className="card-container">
+            {
+                fetchApi.map((item, index) => {
+                    const {name, itemLeft, catagory, image, description} = item
+                    return <div className="card" key={index}>
+                    <div className="card-body">
+                        <div className="card-foods">
+                            <span>{name}</span>
+                            <span>Item left {itemLeft}</span>
+                        </div>
+
+                        <div className="food-container">
+                            <div className="card-image">
+                                <img src={image} alt="" />
+                            </div>
+                            <div className="card-descriptions">
+                                <p>{description}</p>
+                                <div className="order-now"><a href="#">Order Now</a></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+                })
+            }
         </div>
-    </div>
-  )
+        </div>
+        
+    )
 }
 
 export default Resturant
