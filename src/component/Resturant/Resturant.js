@@ -2,25 +2,25 @@ import { useState } from "react";
 import "./resturant.css";
 import FoodItems from "./FoodItems";
 import Menu from "./menuAPI";
-
+import NavResturant from "./NavResturant";
+const uniqueCatagory = [
+    ...new Set(Menu.map(item => item.catagory)),
+    "All"
+]
+console.log(uniqueCatagory);
 const Resturant = () => {
     const [fetchApi, setFetchApi] = useState(Menu)
+    const [menuCatagory] = useState(uniqueCatagory)
+
+    const filterList = (itemName) => {
+        const updateData = Menu.filter((item) => {
+            return item.catagory === itemName;
+        })
+        setFetchApi(updateData)
+    }
   return ( 
     <div>
-        
-        <header>
-            <div className="logo">
-                <h3><a href="">Resturant</a></h3>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="">Breakfast</a></li>
-                    <li><a href="">Lunch</a></li>
-                    <li><a href="">Snacks</a></li>
-                </ul>
-            </nav>
-        </header>
-
+        <NavResturant menuCatagory = {menuCatagory} setFetch = {() => setFetchApi(Menu)} filterList ={filterList}/>
         <FoodItems fetch={fetchApi} setFetch={setFetchApi}/>
     </div>
   )

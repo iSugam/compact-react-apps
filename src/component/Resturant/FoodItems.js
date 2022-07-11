@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Zoom } from '@mui/material';
 
 const FoodItems = ({ fetch, setFetch }) => {
@@ -20,7 +20,7 @@ const FoodItems = ({ fetch, setFetch }) => {
                                     </div>
                                     <div className="card-descriptions">
                                         <p>{description}</p>
-                                        <div className="order-now"><a href="#">Order Now</a></div>
+                                        <div className="order-now"><button>Order Now</button></div>
                                     </div>
                                 </div>
                             </div>
