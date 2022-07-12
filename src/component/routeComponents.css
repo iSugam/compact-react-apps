@@ -7,8 +7,9 @@
     top: 0;
     transition: transform .4s;
     transform: translateX(0);
-    background-color: rgb(21, 41, 88);
-    box-shadow: 8px 0 10px rgb( 0 0 0 / .6);
+    background-color: rgba(0, 1, 4, 0.8);
+    backdrop-filter: blur(5px);
+    box-shadow: 8px 43px 10px rgb( 0 0 0 / .6);
 }
 
 .side-bar.side-bar-active {
@@ -26,7 +27,7 @@
     padding: .8rem 1rem .8rem 1.8rem;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    background-color: rgb(21, 41, 88);
+    background-color: rgba(0, 1, 4, 0.8);
     outline: none;
     border: none;
     color: #fff;
@@ -36,7 +37,7 @@
                 10px 8px 10px rgb( 0 0 0 / .4);
 }
 .navButton i {
-    transition: transform 1s;
+    transition: transform 500ms;
     font-size: 20px;
 } 
 
