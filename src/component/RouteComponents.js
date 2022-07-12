@@ -22,8 +22,4 @@ const RouteComponents = () => {
   )
 }
 
-const rout = () => {
-    return 
-}
-
 export default RouteComponents
