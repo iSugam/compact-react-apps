@@ -11,9 +11,25 @@ const Todo = () => {
     }
 
     const addItems = () => {
+        const inputData = {
+            id: `id-is-${todoItems.length}`,
+            value: input
+        }
         if(!input) return
-        setTodoItems(prevValue => [...prevValue, input])
+        setTodoItems(prevValue => [...prevValue, inputData])
         setInput("")
+    }
+
+    const deleteItems = (id) => {
+        setTodoItems(prevValue => {
+            return prevValue.filter((item) => {
+                return item.id !== id
+            })
+        })
+    }
+
+    const clearAll = () => {
+        setTodoItems([])
     }
 
   return (
@@ -39,20 +55,22 @@ const Todo = () => {
 
             <div className="added-list">
                 <ul>
-                    {todoItems.map((item, index) => {
-                        return  <li key={`id${item}${index}`}> {item}
+                    {todoItems.map((item) => {
+                        return (
+                            <li key={item.id}> {item.value}
                                 <div className='list-icon'>
                                     <span><i className="fa-solid fa-pen-to-square"></i></span>
-                                    <span><i className="fa-solid fa-trash-can"></i></span>
+                                    <span onClick={() =>deleteItems(item.id)}><i className="fa-solid fa-trash-can"></i></span>
                                 </div>
-                        </li>
+                            </li>
+                        )
                     })
                     }
                 </ul>
             </div>
 
             <div className='clear-btns'>
-                <button>Clear Items</button>
+                <button onClick={clearAll}>Clear Items</button>
             </div>
         </div>
     </div>
