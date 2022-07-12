@@ -7,7 +7,6 @@ const uniqueCatagory = [
     ...new Set(Menu.map(item => item.catagory)),
     "All"
 ]
-console.log(uniqueCatagory);
 const Resturant = () => {
     const [fetchApi, setFetchApi] = useState(Menu)
     const [menuCatagory] = useState(uniqueCatagory)

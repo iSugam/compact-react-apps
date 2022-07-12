@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const NavResturant = ({setFetch, menuCatagory, filterList}) => {
+    const [navIcon, setNavIcon] = useState(false)
+
+    const navbarToggle = () => {
+        setNavIcon(!navIcon)
+    }
 
     const capitalFirst = (item) => {
         return item.charAt(0).toUpperCase() + item.slice(1)
@@ -12,8 +17,8 @@ const NavResturant = ({setFetch, menuCatagory, filterList}) => {
                     <h3><button>Resturant</button></h3>
                 </div>
 
-                <nav>
-                    <ul>
+                <nav className={!navIcon? 'navbar' : 'navbar active'}>
+                    <ul className='navbar-ul'>
                         {
                             menuCatagory.map((item, index) => {
                                 return (
@@ -28,6 +33,10 @@ const NavResturant = ({setFetch, menuCatagory, filterList}) => {
                         }
                     </ul>
                 </nav>
+
+                <div onClick={navbarToggle} className="nav-icon">
+                    <i className="fa-solid fa-bars"></i>
+                </div>
         </header>
     )
 }
