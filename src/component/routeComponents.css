@@ -8,7 +8,7 @@
     transition: transform .4s;
     transform: translateX(0);
     background-color: rgb(21, 41, 88);
-    box-shadow: 10px 0 10px rgb( 0 0 0 / .6);
+    box-shadow: 8px 0 10px rgb( 0 0 0 / .6);
 }
 
 .side-bar.side-bar-active {
@@ -32,6 +32,8 @@
     color: #fff;
     cursor: pointer;
     z-index: 9999;
+    box-shadow: 10px 1px 10px rgb( 0 0 0 / .4),
+                10px 8px 10px rgb( 0 0 0 / .4);
 }
 .navButton i {
     transition: transform 1s;
@@ -48,7 +50,7 @@
 .side-bar ul {
     position: absolute;
     top: 50%;
-    left: 25px;
+    left: 10px;
     transform: translate(0, -50%);
     list-style: none;
 }
@@ -56,6 +58,7 @@
 .side-bar ul li {
     margin: 30px 0;
     position: relative;
+    font-family: 'Yellowtail', cursive;
 }
 
 .side-bar ul li .nav-link {
@@ -69,21 +72,24 @@
     border-radius: 50%;
     padding: .6rem;
     transition: color .2s;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8),
+                inset 0 0 20px #0007;
 }
 
-.side-bar ul li .nav-link div {
-    transform: scale(0);
+.side-bar ul li .nav-link span {
+    transform: scale(0) translateY(-200px);
     display: inline-block;
     transform-origin: left;
     transition: transform .2s;
     font-size: 20px;
-    background-color: #000;
-    color: #fff;
+    background-color: #fff;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+    color: #000;
     padding: .3rem .6rem;
     border-radius: 8px;
 }
 
 
-.side-bar ul li .nav-link:hover > div {
-    transform: scale(1);
+.side-bar ul li .nav-link:hover > span {
+    transform: scale(1) translateY(-5px);
 }
