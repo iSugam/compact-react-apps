@@ -2,13 +2,12 @@ import React from 'react';
 import { Zoom } from '@mui/material';
 import { v4 as uuidv4 } from 'uuid';
 
-const FoodItems = ({ fetch, setFetch }) => {
-    const uniId = "newidsforeveryelement"
+const FoodItems = ({ fetch }) => {
     return (
         <div className="card-container">
             {
                 fetch.map((item, index) => {
-                    const {id, name, itemLeft, image, description} = item;
+                    const { name, itemLeft, image, description } = item;
                     return <Zoom in={true} timeout={1000} key={uuidv4()}>
                         <div className="card">
                             <div className="card-body">
