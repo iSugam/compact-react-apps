@@ -1,0 +1,89 @@
+.side-bar {
+    position: fixed;
+    z-index: 999;
+    min-height: 100vh;
+    width: 200px;
+    left: 0;
+    top: 0;
+    transition: transform .4s;
+    transform: translateX(0);
+    background-color: rgb(21, 41, 88);
+    box-shadow: 10px 0 10px rgb( 0 0 0 / .6);
+}
+
+.side-bar.side-bar-active {
+    position: absolute;
+    transition: transform .4s;
+    transform: translateX(-100%);
+}
+
+.navButton {
+    position: fixed;
+    top: 23px;
+    left: 0;
+    transform: translate(0, -50%);
+    transition: transform .4s;
+    padding: .8rem 1rem .8rem 1.8rem;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: rgb(21, 41, 88);
+    outline: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    z-index: 9999;
+}
+.navButton i {
+    transition: transform 1s;
+    font-size: 20px;
+} 
+
+.navButton.active {
+    transform: translate(200px, -50%);
+}
+.navButton.active i {
+    transform: rotate(-180deg);
+}
+
+.side-bar ul {
+    position: absolute;
+    top: 50%;
+    left: 25px;
+    transform: translate(0, -50%);
+    list-style: none;
+}
+
+.side-bar ul li {
+    margin: 30px 0;
+    position: relative;
+}
+
+.side-bar ul li .nav-link {
+    text-decoration: none;
+}
+
+.side-bar ul li .nav-link i {
+    color: #fff;
+    font-size: 30px;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    padding: .6rem;
+    transition: color .2s;
+}
+
+.side-bar ul li .nav-link div {
+    transform: scale(0);
+    display: inline-block;
+    transform-origin: left;
+    transition: transform .2s;
+    font-size: 20px;
+    background-color: #000;
+    color: #fff;
+    padding: .3rem .6rem;
+    border-radius: 8px;
+}
+
+
+.side-bar ul li .nav-link:hover > div {
+    transform: scale(1);
+}
