@@ -132,6 +132,6 @@ span:focus {
 }
 
 .clear-btns button:hover {
-    background-color: aqua;
-    color: black;
+    background-color: rgb(8, 24, 55);
+    color: #fff;
 }

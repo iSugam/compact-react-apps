@@ -43,7 +43,7 @@ const Todo = () => {
             setEditItem(null);
             setToggleBtn(false);
         }
-        
+
         else {setTodoItems(prevValue => [...prevValue, newInputData])
         setInputData("")}
     } 
@@ -117,7 +117,7 @@ const Todo = () => {
             </div>
 
             <div className='clear-btns'>
-                <button onClick={clearAll}>Clear Items</button>
+                <button onClick={clearAll}>Clear All</button>
             </div>
         </div>
     </div>
