@@ -1,16 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { InputTodo } from './InputTodo';
 import "./todo.css"
+
+// Get todoItems from local storage
+const getLocalData = () => {
+    const localList = localStorage.getItem("todoList")
+
+    if(localList) {
+        return JSON.parse(localList)
+    }
+    return []
+}
 
 const Todo = () => {
 
-    const [input, setInput] = useState("")
-    const [todoItems, setTodoItems] = useState([])
-    const handleChange = e => {
-        const value = e.target.value;
-        setInput(value)
-    }
+    const [todoItems, setTodoItems] = useState(getLocalData())
 
-    const addItems = () => {
+    // Adding todo items to list
+    const addItems = (input, setInput) => {
         const inputData = {
             id: `id-is-${todoItems.length}`,
             value: input
@@ -20,6 +27,12 @@ const Todo = () => {
         setInput("")
     }
 
+    // Adding todoItems to local storage 
+    useEffect(() => {
+        localStorage.setItem("todoList", JSON.stringify(todoItems));
+    }, [todoItems])
+
+    // Deleting todoItems from list
     const deleteItems = (id) => {
         setTodoItems(prevValue => {
             return prevValue.filter((item) => {
@@ -41,17 +54,8 @@ const Todo = () => {
                     Add Your Items
                 </figcaption>
             </figure>
-            <div className="input-container">
-                <input 
-                    type="text" 
-                    onChange={handleChange}
-                    name="" id="" 
-                    placeholder='📒 Write your Todo'
-                    value={input}
-                />
 
-                <span onClick={addItems}><i className="fa-solid fa-plus"></i></span>
-            </div>
+            <InputTodo onAddItems = {addItems}/>
 
             <div className="added-list">
                 <ul>
