@@ -1,0 +1,131 @@
+.todo {
+    width: 100%;
+    background-color: rgb(8, 24, 55);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.todo-container {
+    padding: 2rem;
+    background-color: rgb(21, 41, 88);
+    border-radius: 10px;
+    min-height: 460px;
+    box-shadow: 0 5px 20px rgb(0 0 0 / .3);
+}
+
+.todo-container .todo-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.todo-container .todo-heading img {
+    width: 50px;
+    margin-bottom: 18px;
+}
+
+.todo-container .title {
+    color: #fff;
+}
+
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.input-container input {
+    outline: none;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #fff;
+    border-bottom: 4px dashed rgb(8, 97, 82);
+    font-size: 16px;
+}
+
+.input-container input:focus {
+    border: 1px solid aqua;
+}
+
+.input-container span {
+    position: absolute;
+    right: 5px;
+    top: 1px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #fff;
+}
+
+span:focus {
+    border: 2px solid #fff;
+}
+
+.todo-container .added-list {
+    margin-top: 20px;
+}
+
+.todo-container .added-list ul {
+    list-style: none;
+    color: #fff;
+}
+
+.todo-container .added-list ul li {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(8, 24, 55);
+    border-radius: 6px;
+    transition: background-color .3s, color .3s;
+    align-items: center;
+    padding: .5rem .6rem;
+    margin-top: 10px;
+}
+
+.todo-container .added-list li:hover{
+    background-color: #fff;
+    color: rgb(54, 52, 52);
+}
+.todo-container .added-list li:hover .list-icon span {
+    transition: color .3s;
+}
+
+.todo-container .added-list li:hover > .list-icon span:first-child{
+    color: rgb(0, 123, 255);
+}
+
+.todo-container .added-list li:hover > .list-icon span:last-child{
+    color: rgb(185, 17, 17);
+}
+
+
+.todo-container .added-list ul li .list-icon span {
+    padding: 0 .1rem;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.clear-btns {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.clear-btns button {
+    border: none;
+    outline: none;
+    background-color: aliceblue;
+    padding: .3rem 1rem;
+    cursor: pointer;
+    transition: color .3s, background-color .3s;
+}
+
+.clear-btns button:hover {
+    background-color: aqua;
+    color: black;
+}
