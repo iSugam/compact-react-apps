@@ -27,8 +27,8 @@ const RouteComponents = () => {
                     </NavLink>
                 </li>
                 <li onClick={() =>setSidebarToggle(!sidebarToggle)}>
-                    <NavLink className="nav-link" to="/resturant"> 
-                    <i class="fa-solid fa-cloud-sun"></i> 
+                    <NavLink className="nav-link" to="/weather"> 
+                    <i className="fa-solid fa-cloud-sun"></i> 
                     <span>Weather</span> 
                     </NavLink>
                 </li>
