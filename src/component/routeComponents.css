@@ -13,7 +13,6 @@
 }
 
 .side-bar.side-bar-active {
-    position: absolute;
     transition: transform .4s;
     transform: translateX(-100%);
 }
@@ -28,6 +27,7 @@
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     background-color: rgba(0, 1, 4, 0.8);
+    backdrop-filter: blur(5px);
     outline: none;
     border: none;
     color: #fff;
@@ -92,11 +92,11 @@
 
 
 .side-bar ul li .nav-link:hover > span {
-    transform: scale(1) translateY(-5px) translateX(5px);
+    transform: scale(1) translateY(-3px) translateX(10px);
 }
 
 @media (max-width: 980px) {
     .side-bar ul li .nav-link span {
-    transform: scale(1) translateY(-5px);
+    transform: scale(1) translateY(-3px) translateX(10px);
     }
 }
