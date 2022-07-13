@@ -23,7 +23,11 @@ const NavResturant = ({setFetch, menuCatagory, filterList}) => {
                             menuCatagory.map((item, index) => {
                                 return (
                                     <li key={index}>
-                                        <button onClick={() => item === "All"? setFetch() : filterList(item)}>
+                                        <button onClick={() => {item === "All"? setFetch() : filterList(item)
+                                        setNavIcon(false)
+                                    }
+                                        
+                                    }>
                                         {capitalFirst(item)}
                                         </button>
                                     </li>
