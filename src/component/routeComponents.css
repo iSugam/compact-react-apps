@@ -92,5 +92,11 @@
 
 
 .side-bar ul li .nav-link:hover > span {
+    transform: scale(1) translateY(-5px) translateX(5px);
+}
+
+@media (max-width: 980px) {
+    .side-bar ul li .nav-link span {
     transform: scale(1) translateY(-5px);
+    }
 }
