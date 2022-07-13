@@ -14,8 +14,24 @@ const RouteComponents = () => {
         <button className={!sidebarToggle? 'navButton' : 'navButton active'} onClick={toggleClick}><i className="fa-solid fa-arrow-right-long"></i></button>
         <aside className={sidebarToggle?"side-bar":"side-bar side-bar-active"}>
             <ul>
-                <li onClick={() =>setSidebarToggle(!sidebarToggle)}><NavLink className="nav-link" to="/"><i className="fa-solid fa-pen-clip"></i> <span>Todo List</span> </NavLink></li>
-                <li onClick={() =>setSidebarToggle(!sidebarToggle)}><NavLink className="nav-link" to="/resturant"> <i className="fa-solid fa-bowl-food"></i> <span>Resturant</span> </NavLink></li>
+                <li onClick={() =>setSidebarToggle(!sidebarToggle)}>
+                    <NavLink className="nav-link" to="/">
+                        <i className="fa-solid fa-pen-clip"></i> 
+                        <span>Todo List</span> 
+                    </NavLink>
+                </li>
+                <li onClick={() =>setSidebarToggle(!sidebarToggle)}>
+                    <NavLink className="nav-link" to="/resturant"> 
+                    <i className="fa-solid fa-bowl-food"></i> 
+                    <span>Resturant</span> 
+                    </NavLink>
+                </li>
+                <li onClick={() =>setSidebarToggle(!sidebarToggle)}>
+                    <NavLink className="nav-link" to="/resturant"> 
+                    <i class="fa-solid fa-cloud-sun"></i> 
+                    <span>Weather</span> 
+                    </NavLink>
+                </li>
             </ul>
         </aside>
     </div>
