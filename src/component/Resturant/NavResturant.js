@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 const NavResturant = ({setFetch, menuCatagory, filterList}) => {
-    const [navIcon, setNavIcon] = useState(false)
+    const [navIcon, setNavIcon] = useState(false);
 
     const navbarToggle = () => {
         setNavIcon(!navIcon)
