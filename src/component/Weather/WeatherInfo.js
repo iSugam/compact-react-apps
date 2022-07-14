@@ -22,7 +22,7 @@ const WeatherInfo = ({weatherData}) => {
                     <div className='deg'>
                         <h3>Now</h3>
                         <h1>{parseFloat(weatherData.temperature).toFixed(0)}&deg;c</h1>
-                        <h3>Feels Like</h3>
+                        <h3>Actual Feels</h3>
                         <h2>{weatherData.feels_like}&deg;</h2>
                     </div>
             
