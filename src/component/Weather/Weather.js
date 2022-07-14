@@ -71,6 +71,7 @@ const Weather = () => {
                 value={searchValue}
                 className="searchInput"
                 autoFocus
+                placeholder='Search by city names...'
             />
             <button onClick={getWeatherData} className="search-btn">Search</button>
         </div>
