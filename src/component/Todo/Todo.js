@@ -92,6 +92,7 @@ const Todo = () => {
                     onChange={handleChange}
                     placeholder='📒 Write your Todo'
                     value={inputData}
+                    autoFocus
                 />
 
                 {toggleBtn ? 
