@@ -30,7 +30,7 @@ const WeatherInfo = ({weatherData}) => {
                         <h2>{weatherData.name}</h2>
                         <h3>{weatherData.country}</h3>
                         <div className='weather-mood'>
-                            <i className="fa-solid fa-cloud-sun"></i>
+                            <img src={`http://openweathermap.org/img/wn/${weatherData.icon}@2x.png`} alt={`${weatherData.description} icon`} />
                             <h4>{weatherData.weatherInfo}</h4>
                         </div>
                         <p>{date.toLocaleDateString("en-in")}</p>
@@ -87,9 +87,11 @@ const WeatherInfo = ({weatherData}) => {
                 <h2>Extra Info</h2>   
 
                 <div className='cloud-details'>
-                    <div className='c-details-1 mt-3'>
+                    <div className='c-details-1 '>
                         <h3>{weatherData.description}</h3>
-                        <h3><i className="fa-solid fa-cloud-sun"></i></h3>  
+                        <h3>
+                            <img src={`http://openweathermap.org/img/wn/${weatherData.icon}@2x.png`} alt={`${weatherData.description} icon`} />
+                        </h3>  
                     </div>
 
                     <div className='c-details-2 mt-3'>

@@ -9,7 +9,6 @@ const randomLocations = ["Bangalore", "Tokyo", "London", "New york", "Mumbai", "
                         "San Diego", "Seattle", "Las Vegas"]
 const getLocation = (locations) => {
     const loc = Math.round(Math.random() * (randomLocations.length - 1))
-    console.log(loc);
     return randomLocations[loc]
 }
 
@@ -25,7 +24,7 @@ const Weather = () => {
              const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&units=metric&${process.env.REACT_APP_OPENWEATHER_KEY}`)
              const city = await response.json() // Getting the json data with object
 
-             const {id, main: weatherInfo, description} = city.weather[0];
+             const {id, main: weatherInfo, description, icon} = city.weather[0];
              const {temp: temperature, feels_like, temp_min, temp_max, pressure, humidity, sea_level, grnd_level} = city.main;
              const {speed: windSpeed, deg, gust} = city.wind;
              const {country, sunrise, sunset} = city.sys
@@ -34,7 +33,7 @@ const Weather = () => {
 
             // All weather reports in an single object
              const allWeatherReport = {
-                id, weatherInfo, description,
+                id, weatherInfo, description, icon,
                 temperature, feels_like, temp_min, temp_max, pressure, humidity,
                 windSpeed, deg, gust,
                 lon, lat, sea_level, grnd_level,
@@ -42,8 +41,6 @@ const Weather = () => {
                 name
              }
              setWeatherData(allWeatherReport) // Set all the weather data to weatherData state
-             console.log(gust)
-
         } catch (error) {
              console.log(error.message);
         }

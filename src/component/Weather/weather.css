@@ -62,6 +62,7 @@
 .weather-reports-container {
     width: 590px;
     height: 400px;
+    padding: .5rem;
     background-color: rgb(255 255 255 / .1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(10px);
@@ -108,9 +109,12 @@
     font-size: 25px;
 }
 
-.weather-mood i {
-    color: aliceblue;
-    font-size: 45px;
+.weather-mood img {
+    width: 60px;
+}
+
+.weather-city h2 {
+    width: min-content;
 }
 
 .weather-city p {
@@ -165,8 +169,8 @@
 }
 
 
-.extra-weather-info .cloud-details h3:last-child {
-    font-size: 45px;
+.extra-weather-info .cloud-details h3:last-child img{
+    width: 60px;
 }
 
 @media (max-width: 656px) {
@@ -195,7 +199,7 @@
     }
 
     .weather-detailed-info {
-        margin-top: -100px;
+        margin-top: -90px;
         color: #fff;
         padding: 0 1rem;
     }
