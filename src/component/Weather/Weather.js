@@ -1,9 +1,21 @@
 import React, { useEffect, useState } from 'react'
-import "./weather.css"
+import "./weather.css";
+import WeatherInfo from './WeatherInfo';
+
+// Random cities
+const randomLocations = ["Bangalore", "Tokyo", "London", "New york", "Mumbai", "Chicago", 
+                        "Paris", "Berlin", "Jaipur", "Istanbul", "Sydney", "Toronto", "Seoul",
+                        "Beijing", "Boston", "Osaka", "Moscow", "Pune", "Dallas", "Dubai", "Montreal",
+                        "San Diego", "Seattle", "Las Vegas"]
+const getLocation = (locations) => {
+    const loc = Math.round(Math.random() * (randomLocations.length - 1))
+    console.log(loc);
+    return randomLocations[loc]
+}
 
 const Weather = () => {
 
-    const [searchValue, setSearchValue] = useState("bangalore");
+    const [searchValue, setSearchValue] = useState(getLocation(randomLocations));
     const [weatherData, setWeatherData] = useState({})
 
     const getWeatherData = async () => {
@@ -27,6 +39,7 @@ const Weather = () => {
                 name
              }
              setWeatherData(allWeatherReport)
+             console.log(gust)
 
         } catch (error) {
              console.log(error.message);
@@ -44,7 +57,11 @@ const Weather = () => {
     }
 
   return (
-    <div className='weather-container'>
+    <div className='weather-container' style={{ backgroundImage:`url(../assets/images/weather/weather.jpg)`}}>
+        <h4 style={(window.innerWidth)<1000? {display:"none"}: {display:"block"}}>
+            Note: Firefox doesn't support backdrop-filter, so you might not be able to see blur effect if you are using Firefox.
+        </h4>
+
         <div className='search-container'>
             <input
                 onChange={searchChange}
@@ -53,103 +70,11 @@ const Weather = () => {
                 id="search"
                 value={searchValue}
                 className="searchInput"
+                autoFocus
             />
             <button onClick={getWeatherData} className="search-btn">Search</button>
         </div>
-
-        {/* Weather Show case */}
-       {   
-            <div className='weather-reports-container'>
-
-            <div className="weather-reports">
-                <div className="weather-deg-city">
-                    <div className='deg'>
-                        <h3>Now</h3>
-                        <h1>{weatherData.deg}&deg;</h1>
-                        <h3>Feels Like</h3>
-                        <h2>{weatherData.feels_like}&deg;</h2>
-                    </div>
-            
-                    <div className='weather-city'>
-                        <h2>{weatherData.name}</h2>
-                        <h3>{weatherData.country}</h3>
-                        <div className='weather-mood'>
-                            <i className="fa-solid fa-cloud-sun"></i>
-                            <h4>{weatherData.weatherInfo}</h4>
-                        </div>
-                        <p>04:25 PM</p>
-                    </div>
-                </div>  
-
-            </div>
-
-
-            {/* Detailed Weather Information */}
-            <div className='weather-detailed-info'>
-
-                <div className='d-flex aftr sc-w'>
-                    <p>Min</p> <p>{weatherData.temp_min}&deg;</p>
-                </div>
-                <div className='d-flex aftr sc-w'>
-                    <p>Max</p> <p>{weatherData.temp_max}&deg;</p>
-                </div>
-
-                <div className='d-flex aftr sc-w'>
-                    <p>Pressure</p>
-                    <p>{weatherData.pressure}</p>
-                </div>
-                <div className='d-flex aftr sc-w'>
-                    <p>Humidity</p>
-                    <p>{weatherData.humidity}</p>
-                </div>
-                <div className='d-flex aftr sc-w'>
-                    <p>Wind Speed</p>
-                    <p>{weatherData.windSpeed}</p>
-                </div>
-
-                <div className='d-flex aftr sc-w'>
-                    <p>Sea Level</p>
-                    <p>{weatherData.sea_level}</p>
-                </div>
-
-                <div className='d-flex aftr sc-w'>
-                    <p>Ground Level</p>
-                    <p>{weatherData.ground_level}</p>
-                </div>
-
-                <div className='d-flex aftr sc-w'>
-                    <p>Gust</p>
-                    <p>{weatherData.gust}</p>
-                </div>
-
-            </div> 
-
-            <div className='extra-weather-info'>
-
-                <h2>Extra Info</h2>   
-
-                <div className='cloud-details'>
-                    <div className='c-details-1 mt-3'>
-                        <h3>{weatherData.description}</h3>
-                        <h3><i className="fa-solid fa-cloud-sun"></i></h3>  
-                    </div>
-
-                    <div className='c-details-2 mt-3'>
-                        <h3>Longitude</h3>
-                        <h3>{weatherData.lon}</h3>
-                    </div>
-
-                    <div className='c-details-2 mt-3'>
-                        <h3>Latitude</h3>
-                        <h3>{weatherData.lat}</h3>
-                    </div>
-                </div>
-
-
-            </div> 
-
-            </div>
-        }
+        <WeatherInfo weatherData={weatherData}/>
     </div>
   )
 }
