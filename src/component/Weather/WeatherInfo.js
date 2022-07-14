@@ -6,10 +6,10 @@ const WeatherInfo = ({weatherData}) => {
     let hours = date.getHours()
     let min = date.getMinutes()
 
-    let sunrise = new Date(weatherData.sunrise * 1000);
-    let sunset = new Date(weatherData.sunset * 1000);
+    let sunrise = new Date(weatherData.sunrise * 1000); // Sunrise Time
+    let sunset = new Date(weatherData.sunset * 1000); // Sunset time
 
-    let windSpeed = ((weatherData.windSpeed * 3600) / 1000).toFixed(2)
+    let windSpeed = ((weatherData.windSpeed * 3600) / 1000).toFixed(2); // Changing wind speed from meter/sec to km/h
   return (
     <div>
         {/* Weather Show case */}
@@ -17,6 +17,7 @@ const WeatherInfo = ({weatherData}) => {
             <div className='weather-reports-container'>
 
             <div className="weather-reports">
+                {/* Getting City and it's Temperature */}
                 <div className="weather-deg-city">
                     <div className='deg'>
                         <h3>Now</h3>
@@ -80,6 +81,7 @@ const WeatherInfo = ({weatherData}) => {
 
             </div> 
 
+            {/* Extra wether infornation */}
             <div className='extra-weather-info'>
 
                 <h2>Extra Info</h2>   
