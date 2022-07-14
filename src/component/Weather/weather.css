@@ -4,7 +4,6 @@
     width: 100%;
     min-height: 100vh;
     height: 100%;
-    background-image: url("/public/assets/images/weather/weather.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     display: grid;
@@ -13,6 +12,16 @@
     gap: .5rem;
     padding-bottom: 30px;
 }
+
+#background-video {
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
 .search-container {
     width: max-content;
     margin: auto;
@@ -31,6 +40,10 @@
     width: 500px;
 }
 
+.searchInput:focus {
+    outline: 5px solid rgb(255, 149, 0);
+}
+
 .search-btn {
     padding: .7rem 1rem;
     font-size: 18px;
@@ -42,11 +55,16 @@
     background-color: rgb(255, 149, 0);
 }
 
+.search-btn:focus {
+    outline: 5px solid rgb(255, 255, 255);
+}
+
 .weather-reports-container {
     width: 590px;
     height: 400px;
     background-color: rgb(255 255 255 / .1);
     backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(10px);
     margin: 0 auto;
     border-radius: 10px;
     box-shadow: 0 0 10px rgb(0 0 0 / .6);
@@ -77,17 +95,13 @@
 }
 
 .deg h3:first-child {
-    margin-bottom: -25px;
+    margin-bottom: -15px;
 }
 
 .weather-deg-city h1 {
-    font-size: clamp(45px, 8vw, 100px);
+    font-size: clamp(45px, 8vw, 80px);
     margin: 0;
     color: rgb(8, 23, 82);
-}
-
-.weather-city {
-    margin-bottom: 30px;
 }
 
 .weather-mood {
@@ -139,12 +153,14 @@
     margin-top: -80px;
     padding:0 2rem;
     color: #fff;
+    grid-column-start: 1;
+    grid-column-end: 6;
 }
 
 .extra-weather-info .cloud-details {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     padding-top: 20px;
 }
 
@@ -195,10 +211,40 @@
 
     .extra-weather-info .cloud-details {
         flex-direction: column;
+        align-items: center;
     }
 
     .extra-weather-info .cloud-details .mt-3 {
         margin-top: 30px;
     }
     
+}
+
+@media (max-width: 456px) {
+    .searchInput {
+        width: 215px;
+    }
+
+    .weather-reports-container {
+        width: 300px;
+
+    }
+
+    .weather-deg-city {
+        width: 100%;
+    }
+
+    .weather-city {
+        margin-top: 0;
+        font-size: 13px;
+    }
+
+    .weather-mood {
+        font-size: 16px;
+    }
+
+    .weather-mood i {
+        font-size: 30px;
+        margin-top: 20px;
+    }
 }
