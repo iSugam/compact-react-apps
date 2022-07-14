@@ -56,28 +56,31 @@ const Weather = () => {
         setSearchValue(value)
     }
 
-  return (
-    <div className='weather-container' style={{ backgroundImage:`url(../assets/images/weather/weather.jpg)`}}>
-        <h4 style={(window.innerWidth)<1000? {display:"none"}: {display:"block"}}>
-            Note: Firefox doesn't support backdrop-filter, so you might not be able to see blur effect if you are using Firefox.
-        </h4>
+    // Background changes with weatherInfo
+    const weatherBack = `../assets/weather-gifs/${weatherData.weatherInfo}.gif`;
 
-        <div className='search-container'>
-            <input
-                onChange={searchChange}
-                type="search" 
-                name="search" 
-                id="search"
-                value={searchValue}
-                className="searchInput"
-                autoFocus
-                placeholder='Search by city names...'
-            />
-            <button onClick={getWeatherData} className="search-btn">Search</button>
+    return (
+        <div className='weather-container' style={{ backgroundImage:`url(${weatherBack})`}}>
+            <h4 style={(window.innerWidth)<1000? {display:"none"}: {display:"block"}}>
+                Note: Firefox doesn't support backdrop-filter, so you might not be able to see blur effect if you are using Firefox.
+            </h4>
+
+            <div className='search-container'>
+                <input
+                    onChange={searchChange}
+                    type="search" 
+                    name="search" 
+                    id="search"
+                    value={searchValue}
+                    className="searchInput"
+                    autoFocus
+                    placeholder='Search by city names...'
+                />
+                <button onClick={getWeatherData} className="search-btn">Search</button>
+            </div>
+            <WeatherInfo weatherData={weatherData}/>
         </div>
-        <WeatherInfo weatherData={weatherData}/>
-    </div>
-  )
+    )
 }
 
 export default Weather
