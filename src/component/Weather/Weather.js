@@ -57,10 +57,10 @@ const Weather = () => {
     }
 
     // Background changes with weatherInfo
-    const weatherBack = `../assets/weather-gifs/${weatherData.weatherInfo}.gif`;
+    const weatherBack = `url(../assets/weather-gifs/${weatherData.weatherInfo}.gif)`;
 
     return (
-        <div className='weather-container' style={{ backgroundImage:`url(${weatherBack})`}}>
+        <div className='weather-container' style={weatherBack? {backgroundImage: weatherBack}: "url(../assets/weather-gifs/Clear.gifs)"}>
             <h4 style={(window.innerWidth)<1000? {display:"none"}: {display:"block"}}>
                 Note: Firefox doesn't support backdrop-filter, so you might not be able to see blur effect if you are using Firefox.
             </h4>
