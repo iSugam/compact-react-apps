@@ -57,12 +57,18 @@ const Weather = () => {
     }
 
     // Background changes with weatherInfo
-    const weatherBack = `../assets/vids/${`Thunderstorm`}.mp4`;
+    const weatherBackground = `../assets/weather-vids/${weatherData.weatherInfo}.mp4`;
 
     return (
         <div className='weather-container'>
             <div className='weather-background'>
-            <video src= {weatherBack} autoPlay muted loop id='background-video'></video>
+                <video 
+                    src= {weatherBackground} 
+                    autoPlay 
+                    muted 
+                    loop 
+                    id='background-video'>
+                </video>
             </div>
             <h4 style={(window.innerWidth)<1000? {display:"none"}: {display:"block"}}>
                 Note: Firefox doesn't support backdrop-filter, so you might not be able to see blur effect if you are using Firefox.
