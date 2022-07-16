@@ -3,18 +3,18 @@ import "./weather.css";
 import WeatherInfo from './WeatherInfo';
 
 // Random cities for default location
-const randomLocations = ["Bangalore", "Tokyo", "London", "New york", "Mumbai", "Chicago", 
+const randomLocations = ["Bangalore", "Tokyo", "London", "New York", "Mumbai", "Chicago", 
                         "Paris", "Berlin", "Jaipur", "Istanbul", "Sydney", "Toronto", "Seoul",
                         "Beijing", "Boston", "Osaka", "Moscow", "Pune", "Dallas", "Dubai", "Montreal",
                         "San Diego", "Seattle", "Las Vegas"]
-const getLocation = (locations) => {
+const getLocation = () => {
     const loc = Math.round(Math.random() * (randomLocations.length - 1))
     return randomLocations[loc]
 }
 
 const Weather = () => {
 
-    const [searchValue, setSearchValue] = useState(getLocation(randomLocations)); // For random default locations
+    const [searchValue, setSearchValue] = useState(getLocation()); // For random default locations
     const [weatherData, setWeatherData] = useState({}) // For all weather data
 
     // Get all the weather data of the location onClick
