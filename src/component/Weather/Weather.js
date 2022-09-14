@@ -70,9 +70,9 @@ const Weather = () => {
                     id='background-video'>
                 </video>
             </div>
-            <h4 style={(window.innerWidth)<1000? {display:"none"}: {display:"block"}}>
+            {/* <h4 style={(window.innerWidth)<1000? {display:"none"}: {display:"block"}}>
                 Note: Firefox doesn't support backdrop-filter, so you might not be able to see blur effect if you are using Firefox.
-            </h4>
+            </h4> */}
 
             <div className='search-container'>
                 <input
